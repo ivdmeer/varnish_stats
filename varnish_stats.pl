@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: varnish_stats.pl,v 1.3 2011/09/08 09:35:53 ivdmeer Exp $
+# $Id: varnish_stats.pl,v 1.5 2011/09/09 14:22:38 ivdmeer Exp $
 #
 # For docs see PODS or use Perldoc 
 #
@@ -15,7 +15,7 @@ use Pod::Usage;
 #####################
 
 # Get options else use defined options at config part
-my $opt_category = '';
+my $opt_category = 'all';
 my $opt_help = 0;
 my $opt_host = '127.0.0.1'; # default host
 my $opt_port = '30000';     # default port number
@@ -149,21 +149,43 @@ sub get_varnishstats_items_by_category {
 
 	# Defining varnishstats categories
 	my %defs = ( 
-		'cache_stats' => {
-				map { $_ => undef} qw/cache_hits cache_hitrate cache_misses client_requests_received/
-		},
-		'connection_stats' => { 
+		'backend_stats' => { 
 				map { $_ => undef} 
 					qw/
-						backend_conn_reuses 
-						backend_conn_success 
+						backend_conn_reuses
+						backend_conn_success
 						backend_conn_was_closed
 						backend_requests_made
+					/
+		},
+		'cache_stats' => {
+				map { $_ => undef} 
+					qw/
+						cache_hits
+						cache_hitrate
+						cache_misses
 						client_connections_accepted
 						client_requests_received
-						total_body_bytes
+					/
+		},
+		'client_stats' => {
+				map { $_ => undef} 
+					qw/
+						client_connections_accepted
+						client_requests_received
+					/
+		},
+		'mem_stats' => {
+				map { $_ => undef} 
+					qw/
+						bytes_allocated
+						bytes_free
+					/
+		},
+		'total_stats' => {
+				map { $_ => undef} 
+					qw/
 						total_fetch
-						total_header_bytes
 						total_pass
 						total_requests
 						total_sessions
@@ -283,5 +305,6 @@ varnish_stats.pl [options]
 Ivdmeer
 
 =cut
+
 
 
