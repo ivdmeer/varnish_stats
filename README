@@ -1,0 +1,12 @@
+
+Varnish cacti (version 0.8.7g) templates
+
+Import all templates at Cacti and create graphs for your hosts
+
+Categories:   | Graphs
+-------------------------------------------------------------
+backend_stats | Varnish - Backend connections
+cache_stats   | Varnish - cache hits, misses, hitrate
+client_stats  | Varnish - Client connections
+mem_stats     | Varnish - Memory usage
+total_stats   | Varnish - Totals
