@@ -144,6 +144,32 @@
 				<hard_return>on</hard_return>
 				<sequence>8</sequence>
 			</hash_100021f02a2581d4c0608b1edf45834e93f1b8>
+			<hash_100021820195558334d3479152f01b3e130664>
+				<task_item_id>hash_0800216a19e17090cc8e38df73f0032ac5f6db</task_item_id>
+				<color_id>FF00FF</color_id>
+				<alpha>FF</alpha>
+				<graph_type_id>8</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060021e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format>Conn made</text_format>
+				<hard_return></hard_return>
+				<sequence>9</sequence>
+			</hash_100021820195558334d3479152f01b3e130664>
+			<hash_100021c6a4563b7510e3dbd4963dc7cb285640>
+				<task_item_id>hash_0800216a19e17090cc8e38df73f0032ac5f6db</task_item_id>
+				<color_id>0</color_id>
+				<alpha>FF</alpha>
+				<graph_type_id>9</graph_type_id>
+				<consolidation_function_id>1</consolidation_function_id>
+				<cdef_id>0</cdef_id>
+				<value></value>
+				<gprint_id>hash_060021e9c43831e54eca8069317a2ce8c6f751</gprint_id>
+				<text_format></text_format>
+				<hard_return>on</hard_return>
+				<sequence>10</sequence>
+			</hash_100021c6a4563b7510e3dbd4963dc7cb285640>
 		</items>
 		<inputs>
 			<hash_0900214f5e5eaecd0b1cda3d72ac3cfe49fe09>
@@ -170,6 +196,12 @@
 				<column_name>task_item_id</column_name>
 				<items>hash_000021ca5edf8ebbafa4b5f829ae5db3936f27|hash_000021bc7377da11664e5a6486579399a7dd10</items>
 			</hash_0900211c012893b1c7337e0e6ab60bad73637b>
+			<hash_09002154ae33a69f3c41d95a625d9205ec234b>
+				<name>Data Source [backend_requests_ma]</name>
+				<description></description>
+				<column_name>task_item_id</column_name>
+				<items>hash_000021820195558334d3479152f01b3e130664|hash_000021c6a4563b7510e3dbd4963dc7cb285640</items>
+			</hash_09002154ae33a69f3c41d95a625d9205ec234b>
 		</inputs>
 	</hash_000021f30ab7fec9f6c7917c7527d7dc59e63b>
 	<hash_0100214392346f3c75a9889d17b453b0cefb19>
@@ -396,6 +428,20 @@
 				<t_data_input_field_id></t_data_input_field_id>
 				<data_input_field_id>hash_0700217e61dc7b4ab7591bf1971c5f562265dc</data_input_field_id>
 			</hash_080021fb1a44cf76834c4b20aeeda4c7e65970>
+			<hash_0800216a19e17090cc8e38df73f0032ac5f6db>
+				<t_data_source_name></t_data_source_name>
+				<data_source_name>backend_requests_ma</data_source_name>
+				<t_rrd_minimum></t_rrd_minimum>
+				<rrd_minimum>0</rrd_minimum>
+				<t_rrd_maximum></t_rrd_maximum>
+				<rrd_maximum>0</rrd_maximum>
+				<t_data_source_type_id></t_data_source_type_id>
+				<data_source_type_id>2</data_source_type_id>
+				<t_rrd_heartbeat></t_rrd_heartbeat>
+				<rrd_heartbeat>600</rrd_heartbeat>
+				<t_data_input_field_id></t_data_input_field_id>
+				<data_input_field_id>hash_070021d39942d7dc85e6842578b20d763144ad</data_input_field_id>
+			</hash_0800216a19e17090cc8e38df73f0032ac5f6db>
 		</items>
 		<data>
 			<item_000>
@@ -582,6 +628,15 @@
 				<input_output>out</input_output>
 				<data_name>Bytes_free</data_name>
 			</hash_070021df5dc0f17d226829afcb918aa7a4f7ac>
+			<hash_070021d39942d7dc85e6842578b20d763144ad>
+				<name>backend_requests_made</name>
+				<update_rra>on</update_rra>
+				<regexp_match></regexp_match>
+				<allow_nulls></allow_nulls>
+				<type_code></type_code>
+				<input_output>out</input_output>
+				<data_name>Backend_requests_made</data_name>
+			</hash_070021d39942d7dc85e6842578b20d763144ad>
 		</fields>
 	</hash_0300216f74b48a09e25648a227482d8a628a4d>
 	<hash_150021c21df5178e5c955013591239eb0afd46>
