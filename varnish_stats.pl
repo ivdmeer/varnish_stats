@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: varnish_stats.pl,v 1.5 2011/09/09 14:22:38 ivdmeer Exp $
+# $Id: varnish_stats.pl,v 1.6 2011/09/16 07:48:05 ivdmeer Exp $
 #
 # For docs see PODS or use Perldoc 
 #
@@ -156,6 +156,7 @@ sub get_varnishstats_items_by_category {
 						backend_conn_success
 						backend_conn_was_closed
 						backend_requests_made
+						backend_conn_recycles
 					/
 		},
 		'cache_stats' => {
