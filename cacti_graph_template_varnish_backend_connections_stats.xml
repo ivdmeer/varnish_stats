@@ -412,7 +412,7 @@
 				<t_rrd_heartbeat></t_rrd_heartbeat>
 				<rrd_heartbeat>600</rrd_heartbeat>
 				<t_data_input_field_id></t_data_input_field_id>
-				<data_input_field_id>hash_0700217e61dc7b4ab7591bf1971c5f562265dc</data_input_field_id>
+				<data_input_field_id>hash_0700217e57d5e90f1809f605f5d8a1749d5836</data_input_field_id>
 			</hash_080021fcf116401ffa584a7838b4fed9e51e8a>
 			<hash_080021fb1a44cf76834c4b20aeeda4c7e65970>
 				<t_data_source_name></t_data_source_name>
@@ -426,7 +426,7 @@
 				<t_rrd_heartbeat></t_rrd_heartbeat>
 				<rrd_heartbeat>600</rrd_heartbeat>
 				<t_data_input_field_id></t_data_input_field_id>
-				<data_input_field_id>hash_0700217e61dc7b4ab7591bf1971c5f562265dc</data_input_field_id>
+				<data_input_field_id>hash_0700215740174ff678b29aa49ca58b5e4cd0ef</data_input_field_id>
 			</hash_080021fb1a44cf76834c4b20aeeda4c7e65970>
 			<hash_0800216a19e17090cc8e38df73f0032ac5f6db>
 				<t_data_source_name></t_data_source_name>
