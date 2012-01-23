@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: varnish_stats.pl,v 1.6 2011/09/16 07:48:05 ivdmeer Exp $
+# $Id: varnish_stats.pl,v 1.7 2012/01/23 15:39:27 ivdmeer Exp $
 #
 # For docs see PODS or use Perldoc 
 #
@@ -107,7 +107,7 @@ sub process_varnishstats {
 
 	# calculate hit rate
 	$data->{'cache_hitrate'} = (exists($data->{'cache_hits'}) && exists($data->{'cache_misses'})) ? 
-		int($data->{'cache_hits'} / ($data->{'cache_hits'} + $data->{'cache_misses'}) * 100) : 0; 
+		int(($data->{'cache_hits'} + $data->{'total_pass'}) / ($data->{'cache_hits'} + $data->{'cache_misses'} + $data->{'total_pass'}) * 100) : 0;
 	
 	return $data;
 }
