@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Id: varnish_stats.pl,v 1.7 2012/01/23 15:39:27 ivdmeer Exp $
+# $Id: varnish_stats.pl,v 1.8 2012/02/09 12:30:21 ivdmeer Exp $
 #
 # For docs see PODS or use Perldoc 
 #
@@ -54,12 +54,8 @@ sub fetch_varnishstats {
 		Binmode=>0,
 		Prompt=>'//'
 	);
-
-	$t->open() || die "Can't open connection!" ;
-	$t->put(String=>"\n");
-	$rawdata=$t->get();
-	$t->close();
-	return $rawdata;
+	my @rawdata = $t->getlines();
+	return \@rawdata;
 }
 
 
@@ -80,8 +76,7 @@ sub process_varnishstats {
 	my $data = {};
 
 	# process data
-	my @lines=split /\n/,$rawdata;
-	foreach my $line (@lines) {
+	foreach my $line (@{$rawdata}) {
 		# validate if given line has a value and a description if not skip it
 		if ($line !~ /^[\s]+([\d]+)[\s]+(.*)$/) { 
 			next;
@@ -107,8 +102,7 @@ sub process_varnishstats {
 
 	# calculate hit rate
 	$data->{'cache_hitrate'} = (exists($data->{'cache_hits'}) && exists($data->{'cache_misses'})) ? 
-		int(($data->{'cache_hits'} + $data->{'total_pass'}) / ($data->{'cache_hits'} + $data->{'cache_misses'} + $data->{'total_pass'}) * 100) : 0;
-	
+		int(($data->{'cache_hits'} + $data->{'total_pass'}) / ($data->{'cache_hits'} + $data->{'cache_misses'} + $data->{'total_pass'}) * 100) : 0; 
 	return $data;
 }
 
@@ -306,6 +300,5 @@ varnish_stats.pl [options]
 Ivdmeer
 
 =cut
-
 
 
